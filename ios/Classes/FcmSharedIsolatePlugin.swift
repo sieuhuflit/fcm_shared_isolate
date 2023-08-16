@@ -88,9 +88,4 @@ import FirebaseMessaging
     public func messaging(_ messaging: Messaging, didReceiveRegistrationToken token: String?) {
         channel.invokeMethod("token", arguments: [token])
     }
-
-    public func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingDelegate) {
-        print(remoteMessage.appData)
-        channel.invokeMethod("message", arguments: [remoteMessage.appData])
-    }
 }
